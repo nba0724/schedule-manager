@@ -12,6 +12,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@line/bot-sdk": "^6.8.4",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
