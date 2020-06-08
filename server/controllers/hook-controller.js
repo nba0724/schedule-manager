@@ -1,10 +1,9 @@
 const line = require("@line/bot-sdk");
-
-const client = new line.Client(lineConfig);
 const lineConfig = {
   channelAccessToken: process.env.LINE_ACCESS_TOKEN,
   channelSecret: process.env.LINE_SECRET_KEY
 };
+const client = new line.Client(lineConfig);
 
 exports.hundleLineEvent = (req, res) => {
   res.status(200).end();
