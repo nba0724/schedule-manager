@@ -5,6 +5,7 @@ const port = process.env.PORT || 8000;
 
 // express Routerの設定
 // const api = require("./server/routers/api");
+const hookRouter = require("./server/routers/hook-router");
 
 // クラスターモジュール用
 const cluster = require("cluster");
@@ -36,7 +37,7 @@ if (cluster.isMaster) {
 
   // APIルーティング
   //app.use("/_api", api);
-
+  app.use("/hook", hookRouter);
   // 静的ファイルのパス
   app.use(express.static(__dirname + "/dist/"));
   app.get(/.*/, (req, res) => {
