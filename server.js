@@ -38,6 +38,7 @@ if (cluster.isMaster) {
   //app.use("/_api", api);
 
   // 静的ファイルのパス
+  app.use(express.static(__dirname + "/dist/"));
   app.get(/.*/, (req, res) => {
     res.sendFile(__dirname + "/dist/index.html");
   });
